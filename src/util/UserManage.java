@@ -2,19 +2,27 @@ package util;
 
 import java.util.Scanner;
 
-public class UserManage implements Administrate {
+import data.model.User;
+
+public class UserManage{
 	
 	private Scanner in = new Scanner(System.in);
+	private static UserManage instance = null;
+	
+	
+	  public static UserManage getInstance() {
+		    if(instance == null)
+		      instance = new UserManage();
+		    return instance;
+		  }
 
-	@Override
-	public void add() {
+	public void addUser(User user) {
 		
 
 	}
 
-	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
+	public void deleteUser(String login) {
+
 
 	}
 
