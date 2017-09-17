@@ -3,18 +3,16 @@ package data.model;
 public class Task {
 	
 	private String projectName;
-	private String projectDescription;
 	private String taskName;
 	private String taskDescription;
 	private String taskStatus;
 	private String userLogin;
 	
 	
-	public Task (String projectName, String projectDescription, String taskName,
+	public Task (String projectName, String taskName,
 			String taskDescription, String taskStatus, String userLogin) {
 		
 		this.projectName = projectName;
-		this.projectDescription = projectDescription;
 		this.taskName = taskName;
 		this.taskDescription = taskDescription;
 		this.taskStatus = taskStatus;
@@ -30,16 +28,6 @@ public class Task {
 
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
-	}
-
-
-	public String getProjectDescription() {
-		return projectDescription;
-	}
-
-
-	public void setProjectDescription(String projectDescription) {
-		this.projectDescription = projectDescription;
 	}
 
 
@@ -87,7 +75,6 @@ public class Task {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((projectDescription == null) ? 0 : projectDescription.hashCode());
 		result = prime * result + ((projectName == null) ? 0 : projectName.hashCode());
 		result = prime * result + ((taskDescription == null) ? 0 : taskDescription.hashCode());
 		result = prime * result + ((taskName == null) ? 0 : taskName.hashCode());
@@ -106,11 +93,6 @@ public class Task {
 		if (getClass() != obj.getClass())
 			return false;
 		Task other = (Task) obj;
-		if (projectDescription == null) {
-			if (other.projectDescription != null)
-				return false;
-		} else if (!projectDescription.equals(other.projectDescription))
-			return false;
 		if (projectName == null) {
 			if (other.projectName != null)
 				return false;
@@ -142,9 +124,8 @@ public class Task {
 
 	@Override
 	public String toString() {
-		return "Task [projectName=" + projectName + ", projectDescription=" + projectDescription + ", taskName="
-				+ taskName + ", taskDescription=" + taskDescription + ", taskStatus=" + taskStatus + ", userLogin="
-				+ userLogin + "]";
+		return "Task [projectName=" + projectName + ", taskName=" + taskName + ", taskDescription=" + taskDescription
+				+ ", taskStatus=" + taskStatus + ", userLogin=" + userLogin + "]";
 	}
 	
 	
