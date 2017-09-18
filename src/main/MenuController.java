@@ -33,6 +33,19 @@ public class MenuController {
 		
 		System.out.println("User login");
 		String login = in.next();
+		UserManage.getInstance().deleteUser(login);
+		
+	}
+	
+	public static void showUsers() {
+		
+	}
+	
+	public static void addProject() {
+		
+	}
+	
+	public static void deleteProject() {
 		
 		
 	}

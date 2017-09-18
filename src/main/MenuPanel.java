@@ -48,6 +48,7 @@ public class MenuPanel {
 		System.out.println("8. Edit task");
 		System.out.println("9. Delete task");
 		System.out.println("10. Delete project");
+		System.out.println("11. Show users");
 		System.out.println("0. Logout");
 		
 		
@@ -57,11 +58,14 @@ public class MenuPanel {
 		switch(a) {
 		
 		case 1:
-			
+			MenuController.addUser();
+			adminPanel();
 		case 2:
-			
-			
-			
+			MenuController.deleteUser();
+			adminPanel();
+		case 11:
+			MenuController.showUsers();
+			adminPanel();
 		}
 	}
 
