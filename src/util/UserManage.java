@@ -20,12 +20,12 @@ public class UserManage{
 		  }
 	  
 
-	public void addUser(User user) {
+	public void addUser(User user, String userLogin) {
 		
 		for (User u: users) {
 			if(u.getLogin().equals(user.getLogin())) {
 				System.out.println("Login unavailable");
-				MenuPanel.adminPanel();
+				MenuPanel.adminPanel(userLogin);
 			}
 			
 		}
@@ -39,12 +39,12 @@ public class UserManage{
 
 	}
 
-	public void deleteUser(String login) {
+	public void deleteUser(String login, String userLogin) {
 		
 		for (User u: users) {
 			if(u.getLogin().equals(login)) {
 				users.remove(u);
-				MenuPanel.adminPanel();
+				MenuPanel.adminPanel(userLogin);
 			}
 		}
 		System.out.println("Wrong login");

@@ -35,7 +35,9 @@ public class MenuPanel {
 	
 	
 	
-	public static void adminPanel() {
+	public static void adminPanel(String userLogin) {
+		
+		String userType = "ADMIN";
 		
 		System.out.println("Welcome to Admin Panel");
 		System.out.println("1. Add user");
@@ -58,14 +60,19 @@ public class MenuPanel {
 		switch(a) {
 		
 		case 1:
-			MenuController.addUser();
-			adminPanel();
+			MenuController.addUser(userLogin);
+			adminPanel(userLogin);
 		case 2:
-			MenuController.deleteUser();
-			adminPanel();
+			MenuController.deleteUser(userLogin);
+			adminPanel(userLogin);
+		case 3:
+			
+		case 4:
+			MenuController.addProject(userType, userLogin);
+			
 		case 11:
 			MenuController.showUsers();
-			adminPanel();
+			adminPanel(userLogin);
 		}
 	}
 

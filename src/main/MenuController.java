@@ -2,7 +2,9 @@ package main;
 
 import java.util.Scanner;
 
+import data.model.Project;
 import data.model.User;
+import util.ProjectManage;
 import util.UserManage;
 
 public class MenuController {
@@ -10,7 +12,7 @@ public class MenuController {
 	private static Scanner in = new Scanner(System.in);
 	
 	
-	public static void addUser() {
+	public static void addUser(String userLogin) {
 		
 		String name, surname, login, password, userType;
 		
@@ -25,17 +27,17 @@ public class MenuController {
 		System.out.println("User Type? ADMIN or USER");
 		userType = in.next();
 		
-		UserManage.getInstance().addUser(new User(name, surname, login, password, userType));
+		UserManage.getInstance().addUser(new User(name, surname, login, password, userType), userLogin);
 		
 		
 	}
 	
 	
-	public static void deleteUser() {
+	public static void deleteUser(String userLogin) {
 		
 		System.out.println("User login");
 		String login = in.next();
-		UserManage.getInstance().deleteUser(login);
+		UserManage.getInstance().deleteUser(login, userLogin);
 		
 	}
 	
@@ -43,7 +45,18 @@ public class MenuController {
 		UserManage.getInstance().showUser();
 	}
 	
-	public static void addProject(String userType) {
+	public static void addProject(String userType, String userLogin) {
+		
+		String projectName, projectDescription;
+		
+		System.out.println("Project name");
+		projectName = in.nextLine();
+		System.out.println("Write project description");
+		projectDescription = in.nextLine();
+		in.nextLine();
+		
+		
+		ProjectManage.addProject(new Project(projectName, projectDescription, userLogin), userType, userLogin);
 		
 		
 	}
