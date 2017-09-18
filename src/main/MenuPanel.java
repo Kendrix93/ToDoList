@@ -68,12 +68,15 @@ public class MenuPanel {
 		case 3:
 			MenuController.changeUserPassword(userLogin);
 			adminPanel(userLogin);
-			
 		case 4:
 			MenuController.addProject(userType, userLogin);
 			adminPanel(userLogin);
-			
-			
+		case 5:
+			MenuTaskController.addTask(userType, userLogin);
+			adminPanel(userLogin);
+		case 6:
+			MenuTaskController.showAllTasks();
+			adminPanel(userLogin);
 		case 10:
 			MenuController.deleteProject(userType, userLogin);
 			adminPanel(userLogin);

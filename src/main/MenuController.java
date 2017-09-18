@@ -26,6 +26,7 @@ public class MenuController {
 		password = in.next();
 		System.out.println("User Type? ADMIN or USER");
 		userType = in.next();
+		in.nextLine();
 		
 		UserManage.getInstance().addUser(new User(name, surname, login, password, userType), userLogin);
 		
@@ -65,7 +66,6 @@ public class MenuController {
 		projectName = in.nextLine();
 		System.out.println("Write project description");
 		projectDescription = in.nextLine();
-		in.nextLine();
 		
 		
 		ProjectManage.addProject(new Project(projectName, projectDescription, userLogin), userType, userLogin);
@@ -77,11 +77,14 @@ public class MenuController {
 		
 		System.out.println("Project name");
 		String projectName = in.nextLine();
-		in.nextLine();
 		
 		ProjectManage.deleteProject(projectName, userType, userLogin);
 		
 		
+	}
+	
+	public void showAllProjects() {
+		ProjectManage.showAllProjects();
 	}
 
 }

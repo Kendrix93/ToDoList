@@ -48,5 +48,11 @@ public class ProjectManage {
 			MenuPanel.userPanel();
 		}
 	}
+	
+	public static void showAllProjects() {
+		for (Project p : projects)
+			System.out.println(p);
+		
+	}
 
 }
