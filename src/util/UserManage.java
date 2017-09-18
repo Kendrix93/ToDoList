@@ -1,14 +1,14 @@
 package util;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import data.holder.DataHolder;
 import data.model.User;
+import main.MenuPanel;
 
 public class UserManage{
 	
-	private Scanner in = new Scanner(System.in);
+//	private Scanner in = new Scanner(System.in);
 	private static UserManage instance = null;
 	private ArrayList<User> users = DataHolder.getUser();
 	
@@ -25,7 +25,7 @@ public class UserManage{
 		for (User u: users) {
 			if(u.getLogin().equals(user.getLogin())) {
 				System.out.println("Login unavailable");
-				break;
+				MenuPanel.adminPanel();
 			}
 			
 		}
@@ -40,8 +40,20 @@ public class UserManage{
 	}
 
 	public void deleteUser(String login) {
+		
+		for (User u: users) {
+			if(u.getLogin().equals(login)) {
+				users.remove(u);
+				MenuPanel.adminPanel();
+			}
+		}
+		System.out.println("Wrong login");
 
-
+	}
+	
+	public void showUser() {
+		for (User u: users) 
+			System.out.println(u);
 	}
 
 }

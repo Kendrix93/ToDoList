@@ -38,7 +38,7 @@ public class MenuController {
 	}
 	
 	public static void showUsers() {
-		
+		UserManage.getInstance().showUser();
 	}
 	
 	public static void addProject() {
