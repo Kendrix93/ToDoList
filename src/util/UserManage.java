@@ -51,6 +51,17 @@ public class UserManage{
 
 	}
 	
+	public void changeUserPassword(String login, String password, String userLogin) {
+		for (User u: users) {
+			if(u.getLogin().equals(login)) {
+				u.setPassword(password);
+				MenuPanel.adminPanel(userLogin);
+			}
+		}
+		System.out.println("Wrong login");
+		
+	}
+	
 	public void showUser() {
 		for (User u: users) 
 			System.out.println(u);

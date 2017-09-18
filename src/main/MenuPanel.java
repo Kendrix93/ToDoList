@@ -66,10 +66,17 @@ public class MenuPanel {
 			MenuController.deleteUser(userLogin);
 			adminPanel(userLogin);
 		case 3:
+			MenuController.changeUserPassword(userLogin);
+			adminPanel(userLogin);
 			
 		case 4:
 			MenuController.addProject(userType, userLogin);
+			adminPanel(userLogin);
 			
+			
+		case 10:
+			MenuController.deleteProject(userType, userLogin);
+			adminPanel(userLogin);
 		case 11:
 			MenuController.showUsers();
 			adminPanel(userLogin);

@@ -41,6 +41,18 @@ public class MenuController {
 		
 	}
 	
+	public static void changeUserPassword(String userLogin) {
+		
+		String login, password;
+		
+		System.out.println("User login");
+		login = in.next();
+		System.out.println("Write new password for " + login);
+		password = in.next();
+		
+		UserManage.getInstance().changeUserPassword(login, password, userLogin);
+	}
+	
 	public static void showUsers() {
 		UserManage.getInstance().showUser();
 	}
@@ -61,7 +73,13 @@ public class MenuController {
 		
 	}
 	
-	public static void deleteProject(String userType) {
+	public static void deleteProject(String userType, String userLogin) {
+		
+		System.out.println("Project name");
+		String projectName = in.nextLine();
+		in.nextLine();
+		
+		ProjectManage.deleteProject(projectName, userType, userLogin);
 		
 		
 	}
