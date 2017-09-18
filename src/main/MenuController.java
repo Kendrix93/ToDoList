@@ -83,7 +83,7 @@ public class MenuController {
 		
 	}
 	
-	public void showAllProjects() {
+	public static void showAllProjects() {
 		ProjectManage.showAllProjects();
 	}
 
