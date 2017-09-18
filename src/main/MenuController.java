@@ -12,7 +12,7 @@ public class MenuController {
 	
 	public static void addUser() {
 		
-		String name, surname, login, password;
+		String name, surname, login, password, userType;
 		
 		System.out.println("User name");
 		name = in.next();
@@ -22,8 +22,10 @@ public class MenuController {
 		login = in.next();
 		System.out.println("User password");
 		password = in.next();
+		System.out.println("User Type? ADMIN or USER");
+		userType = in.next();
 		
-		UserManage.getInstance().addUser(new User(name, surname, login, password));
+		UserManage.getInstance().addUser(new User(name, surname, login, password, userType));
 		
 		
 	}
@@ -41,11 +43,12 @@ public class MenuController {
 		UserManage.getInstance().showUser();
 	}
 	
-	public static void addProject() {
+	public static void addProject(String userType) {
+		
 		
 	}
 	
-	public static void deleteProject() {
+	public static void deleteProject(String userType) {
 		
 		
 	}

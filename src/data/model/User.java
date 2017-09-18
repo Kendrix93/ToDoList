@@ -6,13 +6,15 @@ public class User {
 	private String surname;
 	private String login;
 	private String password;
+	private String userType;
 	
-	public User (String name, String surname, String login, String password) {
+	public User (String name, String surname, String login, String password, String userType) {
 		
 		this.name = name;
 		this.surname = surname;
 		this.login = login;
 		this.password = password;
+		this.userType = userType;
 		
 	}
 
@@ -48,6 +50,14 @@ public class User {
 		this.password = password;
 	}
 
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -56,6 +66,7 @@ public class User {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
+		result = prime * result + ((userType == null) ? 0 : userType.hashCode());
 		return result;
 	}
 
@@ -88,12 +99,18 @@ public class User {
 				return false;
 		} else if (!surname.equals(other.surname))
 			return false;
+		if (userType == null) {
+			if (other.userType != null)
+				return false;
+		} else if (!userType.equals(other.userType))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", surname=" + surname + ", login=" + login + ", password=" + password + "]";
+		return "User [name=" + name + ", surname=" + surname + ", login=" + login + ", password=" + password
+				+ ", userType=" + userType + "]";
 	}
 	
 	
