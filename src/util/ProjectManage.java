@@ -1,6 +1,7 @@
 package util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import data.holder.DataHolder;
 import data.model.Project;
@@ -10,7 +11,7 @@ import main.MenuPanel;
 public class ProjectManage {
 	
 	
-	private static ArrayList<Project> projects = DataHolder.getProject();
+	private static List<Project> projects = DataHolder.getProject();
 	private static ArrayList<Task> tasks = DataHolder.getTask();
 	
 	public static void addProject(Project project, String userType, String userLogin) {

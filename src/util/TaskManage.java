@@ -37,6 +37,39 @@ public class TaskManage {
 		for (Task t : tasks)
 			System.out.println(t);
 			
+	}
+	
+	public static void deleteTask(String taskName, String projectName, String userLogin, String userType) {
+	
+		
+		for (Task t : tasks) {
+			if (t.getTaskName().equals(taskName) && t.getProjectName().equals(projectName)) {
+					tasks.remove(t);
+					if (userType == "ADMIN") {
+						MenuPanel.adminPanel(userLogin);
+					}else {
+						MenuPanel.userPanel();
+					}
+			}
+		}
+		System.out.println("Wrong task or project");
+		
+	}
+	
+	public static void changeTaskStatus(String taskName, String projectName, 
+			String userLogin, String userType, String taskStatus) {
+		
+		for (Task t : tasks) {
+			if (t.getTaskName().equals(taskName) && t.getProjectName().equals(projectName)) {
+					t.setTaskStatus(taskStatus);
+					if (userType == "ADMIN") {
+						MenuPanel.adminPanel(userLogin);
+					}else {
+						MenuPanel.userPanel();
+					}
+			}
+		}
+		System.out.println("Wrong task or project");
 		
 	}
 	

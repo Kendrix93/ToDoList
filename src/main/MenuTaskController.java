@@ -28,8 +28,40 @@ public class MenuTaskController {
 		
 	}
 	
+	
+	public static void deleteTask(String userType, String userLogin) {
+		
+		String taskName, projectName;
+		
+		System.out.println("Task name");
+		taskName = in.nextLine();
+		System.out.println("Project Name");
+		projectName = in.nextLine();
+		in.nextLine();
+		
+		TaskManage.deleteTask(taskName, projectName, userLogin, userType);
+		
+	}
+	
 	public static void showAllTasks() {
 		TaskManage.showAllTasks();
 	}
+	
+	
+	public static void changeTaskStatus(String userType, String userLogin) {
+		
+		String taskStatus, taskName, projectName;;
+		
+		System.out.println("Task status");
+		taskStatus = in.next();
+		System.out.println("Task name");
+		taskName = in.nextLine();
+		System.out.println("Project Name");
+		projectName = in.nextLine();
+		in.nextLine();
+		
+		TaskManage.changeTaskStatus(taskName, projectName, userLogin, userType, taskStatus);
+	}
+	
 
 }
