@@ -37,7 +37,6 @@ public class MenuTaskController {
 		taskName = in.nextLine();
 		System.out.println("Project Name");
 		projectName = in.nextLine();
-		in.nextLine();
 		
 		TaskManage.deleteTask(taskName, projectName, userLogin, userType);
 		
@@ -58,7 +57,6 @@ public class MenuTaskController {
 		taskName = in.nextLine();
 		System.out.println("Project Name");
 		projectName = in.nextLine();
-		in.nextLine();
 		
 		TaskManage.changeTaskStatus(taskName, projectName, userLogin, userType, taskStatus);
 	}

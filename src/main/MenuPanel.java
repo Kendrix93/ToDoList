@@ -2,12 +2,18 @@ package main;
 
 import java.util.Scanner;
 
+import util.SaveToCSV;
+
 public class MenuPanel{
 	
 	private static Scanner in = new Scanner(System.in);
 	
 	
 	public static void userPanel() {
+		
+		SaveToCSV.saveToFileUser();
+		SaveToCSV.saveToFileProject();
+		SaveToCSV.saveToFileTask();
 		
 		System.out.println("Welcome");
 		System.out.println("1. Add project");
@@ -36,6 +42,11 @@ public class MenuPanel{
 	
 	
 	public static void adminPanel(String userLogin) {
+		
+		
+		SaveToCSV.saveToFileUser();
+		SaveToCSV.saveToFileProject();
+		SaveToCSV.saveToFileTask();
 		
 		String userType = "ADMIN";
 		
@@ -78,6 +89,8 @@ public class MenuPanel{
 		case 6:
 			MenuTaskController.showAllTasks();
 			adminPanel(userLogin);
+			
+			
 		case 10:
 			MenuController.deleteProject(userType, userLogin);
 			adminPanel(userLogin);
