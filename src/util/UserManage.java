@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import data.holder.DataHolder;
 import data.model.User;
-import main.MenuPanel;
+import panelControlls.MenuPanel;
 
 public class UserManage{
 	

@@ -1,4 +1,4 @@
-package main;
+package panelControlls;
 
 import java.util.Scanner;
 

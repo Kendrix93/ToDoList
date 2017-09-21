@@ -6,7 +6,7 @@ import java.util.List;
 import data.holder.DataHolder;
 import data.model.Project;
 import data.model.Task;
-import main.MenuPanel;
+import panelControlls.MenuPanel;
 
 public class ProjectManage {
 	

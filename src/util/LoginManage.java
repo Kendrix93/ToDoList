@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import data.holder.DataHolder;
 import data.model.User;
-import main.LoginPanel;
-import main.MenuPanel;
+import panelControlls.LoginPanel;
+import panelControlls.MenuPanel;
 
 public class LoginManage {
 	

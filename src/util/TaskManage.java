@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import data.holder.DataHolder;
 import data.model.Project;
 import data.model.Task;
-import main.MenuPanel;
+import panelControlls.MenuPanel;
 
 public class TaskManage {
 	
