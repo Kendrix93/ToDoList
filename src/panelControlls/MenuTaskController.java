@@ -21,7 +21,6 @@ public class MenuTaskController {
 		taskName = in.nextLine();
 		System.out.println("Task description");
 		taskDescription = in.nextLine();
-		in.nextLine();
 		
 		Task task = new Task(projectName, taskName, taskDescription, taskStatus, userLogin);
 		
@@ -87,8 +86,8 @@ public class MenuTaskController {
 		projectName = in.nextLine();
 		System.out.println("Task name");
 		taskName = in.nextLine();
-		System.out.println("Task status");
-		taskDescription = in.next();
+		System.out.println("Task description");
+		taskDescription = in.nextLine();
 		
 		TaskManage.editTask(taskName, projectName, userLogin, userType, taskDescription);
 		
