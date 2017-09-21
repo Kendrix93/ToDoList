@@ -95,5 +95,14 @@ public class MenuController {
 	public static void showAllProjects() {
 		ProjectManage.showAllProjects();
 	}
+	
+	public static void showAllUserProject(String userLogin) {
+		
+		ProjectManage.showAllUserProject(userLogin);
+	}
+	
+	public static void showAllUserProjectAndTask(String userLogin) {
+		ProjectManage.showAllUserProjectAndTask(userLogin);
+	}
 
 }

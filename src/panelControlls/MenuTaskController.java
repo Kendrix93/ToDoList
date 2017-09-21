@@ -95,5 +95,13 @@ public class MenuTaskController {
 		
 	}
 	
+	public static void showAllUserProjectTask(String userLogin) {
+		
+		System.out.println("Projest Name");
+		String projectName = in.nextLine();
+		
+		TaskManage.showAllUserProjectTask(userLogin, projectName);
+	}
+	
 
 }

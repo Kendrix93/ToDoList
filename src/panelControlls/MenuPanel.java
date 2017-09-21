@@ -21,12 +21,12 @@ public class MenuPanel{
 		System.out.println("1. Add project");
 		System.out.println("2. Add task");
 		System.out.println("3. Show all my project");
-		System.out.println("3. Show my project and tasks");
-		System.out.println("4. Show all my task to project");
-		System.out.println("4. Change task status");
-		System.out.println("5. Edit task");
-		System.out.println("6. Delete task");
-		System.out.println("7. Delete project");
+		System.out.println("4. Show my project and tasks");
+		System.out.println("5. Show all my task to project");
+		System.out.println("6. Change task status");
+		System.out.println("7. Edit task");
+		System.out.println("8. Delete task");
+		System.out.println("9. Delete project");
 		System.out.println("0. Logout");
 		
 		int a = in.nextInt();
@@ -40,19 +40,24 @@ public class MenuPanel{
 			MenuTaskController.addTask(userType, userLogin);
 			userPanel(userLogin);
 		case 3:
-			MenuTaskController.showAllTasks();
+			MenuController.showAllUserProject(userLogin);
 			userPanel(userLogin);
 		case 4:
-			MenuTaskController.changeTaskStatus(userType, userLogin);
+			MenuController.showAllUserProjectAndTask(userLogin);
 			userPanel(userLogin);
 		case 5:
-			MenuTaskController.editTask(userType, userLogin);
+			MenuTaskController.showAllUserProjectTask(userLogin);
 			userPanel(userLogin);
-			
 		case 6:
-			MenuTaskController.deleteTask(userType, userLogin);
+			MenuTaskController.changeTaskStatus(userType, userLogin);
 			userPanel(userLogin);
 		case 7:
+			MenuTaskController.editTask(userType, userLogin);
+			userPanel(userLogin);
+		case 8:
+			MenuTaskController.deleteTask(userType, userLogin);
+			userPanel(userLogin);
+		case 9:
 			MenuController.deleteProject(userType, userLogin);
 			userPanel(userLogin);
 		case 0:

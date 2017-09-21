@@ -88,5 +88,16 @@ public class TaskManage {
 		}
 		System.out.println("Wrong task or project");
 	}
+	
+	public static void showAllUserProjectTask(String userLogin, String projectName) {
+		
+		for (Task t : tasks) {
+			if (t.getUserLogin().equals(userLogin) && t.getProjectName().equals(projectName)) {
+				System.out.println(t);
+			}
+		}
+		
+	}
+	
 
 }

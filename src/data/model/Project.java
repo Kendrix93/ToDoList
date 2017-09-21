@@ -4,14 +4,14 @@ public class Project {
 	
 	private String projectName;
 	private String projectDescription;
-	private String userName;
+	private String userLogin;
 
 	
 	public Project (String projectName, String projectDescription, String userName) {
 		
 		this.projectName = projectName;
 		this.projectDescription = projectDescription;
-		this.userName = userName;
+		this.userLogin = userName;
 		
 	}
 
@@ -37,12 +37,12 @@ public class Project {
 
 
 	public String getUserName() {
-		return userName;
+		return userLogin;
 	}
 
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.userLogin = userName;
 	}
 
 
@@ -52,7 +52,7 @@ public class Project {
 		int result = 1;
 		result = prime * result + ((projectDescription == null) ? 0 : projectDescription.hashCode());
 		result = prime * result + ((projectName == null) ? 0 : projectName.hashCode());
-		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((userLogin == null) ? 0 : userLogin.hashCode());
 		return result;
 	}
 
@@ -76,10 +76,10 @@ public class Project {
 				return false;
 		} else if (!projectName.equals(other.projectName))
 			return false;
-		if (userName == null) {
-			if (other.userName != null)
+		if (userLogin == null) {
+			if (other.userLogin != null)
 				return false;
-		} else if (!userName.equals(other.userName))
+		} else if (!userLogin.equals(other.userLogin))
 			return false;
 		return true;
 	}
@@ -88,7 +88,7 @@ public class Project {
 	@Override
 	public String toString() {
 		return "Project [projectName=" + projectName + ", projectDescription=" + projectDescription + ", userName="
-				+ userName + "]";
+				+ userLogin + "]";
 	}
 	
 	

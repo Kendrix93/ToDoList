@@ -55,5 +55,26 @@ public class ProjectManage {
 			System.out.println(p);
 		
 	}
+	
+	public static void showAllUserProject(String userLogin) {
+		for (Project p : projects) {
+			if(p.getUserName().equals(userLogin))
+				System.out.println(p);
+		}
+		
+	}
+	
+	public static void showAllUserProjectAndTask(String userLogin) {
+		for (Project p : projects) {
+			if(p.getUserName().equals(userLogin)) {
+				for (Task t: tasks) {
+					if(p.getProjectName().equals(t.getProjectName())) {
+						System.out.println(t);
+					}
+				}
+			}
+				
+		}
+	}
 
 }
