@@ -44,5 +44,50 @@ public class OpenFromCSV {
 		}
 		return user;
 	}
+	
+	public static ArrayList<Project> readFromFileProject(){
+		
+		Path path = Paths.get(filename2);
+		ArrayList<String> read = new ArrayList<String>();
+		try {
+			read = (ArrayList<String>) Files.readAllLines(path);
+		}catch (IOException ex) {
+			System.out.println("Cant read from file project.csv");
+		}
+		ArrayList<Project> project = toObjectProject(read);
+		return project;
+	}
+	
+	public static ArrayList<Project> toObjectProject(ArrayList<String> read){
+		for (String line: read) {
+			String[] l = line.split(";");
+			Project projects = new Project(l[0], l[1], l[2]);
+			project.add(projects);
+		}
+		return project;
+	}
+	
+	
+	public static ArrayList<Task> readFromFileTask(){
+		
+		Path path = Paths.get(filename3);
+		ArrayList<String> read = new ArrayList<String>();
+		try {
+			read = (ArrayList<String>) Files.readAllLines(path);
+		}catch (IOException ex) {
+			System.out.println("Cant read from file project.csv");
+		}
+		ArrayList<Task> task = toObjectTask(read);
+		return task;
+	}
+	
+	public static ArrayList<Task> toObjectTask(ArrayList<String> read){
+		for (String line: read) {
+			String[] l = line.split(";");
+			Task tasks = new Task(l[0], l[1], l[2], l[3],l [4]);
+			task.add(tasks);
+		}
+		return task;
+	}
 
 }
