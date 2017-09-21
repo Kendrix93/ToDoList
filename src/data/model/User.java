@@ -6,9 +6,9 @@ public class User {
 	private String surname;
 	private String login;
 	private String password;
-	private String userType;
+	private UserType userType;
 	
-	public User (String name, String surname, String login, String password, String userType) {
+	public User (String name, String surname, String login, String password, UserType userType) {
 		
 		this.name = name;
 		this.surname = surname;
@@ -50,11 +50,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getUserType() {
+
+	public UserType getUserType() {
 		return userType;
 	}
 
-	public void setUserType(String userType) {
+	public void setUserType(UserType userType) {
 		this.userType = userType;
 	}
 
@@ -99,10 +100,7 @@ public class User {
 				return false;
 		} else if (!surname.equals(other.surname))
 			return false;
-		if (userType == null) {
-			if (other.userType != null)
-				return false;
-		} else if (!userType.equals(other.userType))
+		if (userType != other.userType)
 			return false;
 		return true;
 	}

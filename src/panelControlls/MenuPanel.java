@@ -20,7 +20,9 @@ public class MenuPanel{
 		System.out.println("Welcome");
 		System.out.println("1. Add project");
 		System.out.println("2. Add task");
-		System.out.println("3. Show all taks to project");
+		System.out.println("3. Show all my project");
+		System.out.println("3. Show my project and tasks");
+		System.out.println("4. Show all my task to project");
 		System.out.println("4. Change task status");
 		System.out.println("5. Edit task");
 		System.out.println("6. Delete task");

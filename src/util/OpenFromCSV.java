@@ -10,6 +10,7 @@ import data.holder.DataHolder;
 import data.model.Project;
 import data.model.Task;
 import data.model.User;
+import data.model.UserType;
 
 public class OpenFromCSV {
 	
@@ -36,11 +37,16 @@ public class OpenFromCSV {
 		return user;
 	}
 	
-	public static ArrayList<User> toObjectUser(ArrayList<String> read){
-		for (String line: read) {
+	public static ArrayList<User> toObjectUser(ArrayList<String> read) {
+		for (String line : read) {
 			String[] l = line.split(";");
-			User users = new User(l[0], l[1], l[2], l[3],l[4]);
-			user.add(users);
+			if (l[4].equals("ADMIN")) {
+				User users = new User(l[0], l[1], l[2], l[3], UserType.ADMIN);
+				user.add(users);
+			} else if(l[4].equals("USER") ){
+				User users = new User(l[0], l[1], l[2], l[3], UserType.USER);
+				user.add(users);
+			}
 		}
 		return user;
 	}

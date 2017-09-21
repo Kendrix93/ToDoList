@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import data.holder.DataHolder;
 import data.model.User;
+import data.model.UserType;
 import panelControlls.LoginPanel;
 import panelControlls.MenuPanel;
 
@@ -15,7 +16,7 @@ public class LoginManage {
 		
 		for (User u: users) {
 			if (u.getLogin().equals(login) && u.getPassword().equals(password)) {
-				if (u.getUserType().equals("ADMIN")) {
+				if (u.getUserType().equals(UserType.ADMIN)) {
 					MenuPanel.adminPanel(u.getLogin());
 				}else {
 					MenuPanel.userPanel(u.getLogin());

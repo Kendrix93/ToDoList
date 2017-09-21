@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import data.model.Project;
 import data.model.User;
+import data.model.UserType;
 import util.ProjectManage;
 import util.UserManage;
 
@@ -14,7 +15,9 @@ public class MenuController {
 	
 	public static void addUser(String userLogin) {
 		
-		String name, surname, login, password, userType;
+		String name, surname, login, password;
+		UserType userType;
+		int a = 0;
 		
 		System.out.println("User name");
 		name = in.next();
@@ -25,7 +28,13 @@ public class MenuController {
 		System.out.println("User password");
 		password = in.next();
 		System.out.println("User Type? ADMIN or USER");
-		userType = in.next();
+		System.out.println("1. ADMIN");
+		System.out.println("2. USER");
+		if (a == 1) {
+			userType = UserType.ADMIN;
+		}else {
+			userType = UserType.USER;
+		}
 		in.nextLine();
 		
 		UserManage.getInstance().addUser(new User(name, surname, login, password, userType), userLogin);
