@@ -39,7 +39,7 @@ public class OpenFromCSV {
 	public static ArrayList<User> toObjectUser(ArrayList<String> read){
 		for (String line: read) {
 			String[] l = line.split(";");
-			User users = new User(l[0], l[1], l[2], l[3],l [4]);
+			User users = new User(l[0], l[1], l[2], l[3],l[4]);
 			user.add(users);
 		}
 		return user;
@@ -84,7 +84,7 @@ public class OpenFromCSV {
 	public static ArrayList<Task> toObjectTask(ArrayList<String> read){
 		for (String line: read) {
 			String[] l = line.split(";");
-			Task tasks = new Task(l[0], l[1], l[2], l[3],l [4]);
+			Task tasks = new Task(l[0], l[1], l[2], l[3],l[4]);
 			task.add(tasks);
 		}
 		return task;

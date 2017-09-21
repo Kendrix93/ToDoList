@@ -1,13 +1,20 @@
 package main;
 
+import util.OpenFromCSV;
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String userLogin = "pk";
+		OpenFromCSV.readFromFileUser();
+		OpenFromCSV.readFromFileProject();
+		OpenFromCSV.readFromFileTask();
 		
-		MenuPanel.adminPanel(userLogin);
+		
+		LoginPanel.Panel();
+		
+		//MenuPanel.adminPanel(userLogin);
 
 	}
 
