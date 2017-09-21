@@ -5,12 +5,12 @@ public class Task {
 	private String projectName;
 	private String taskName;
 	private String taskDescription;
-	private String taskStatus;
+	private TaskStatus taskStatus;
 	private String userLogin;
 	
 	
 	public Task (String projectName, String taskName,
-			String taskDescription, String taskStatus, String userLogin) {
+			String taskDescription, TaskStatus taskStatus, String userLogin) {
 		
 		this.projectName = projectName;
 		this.taskName = taskName;
@@ -51,12 +51,12 @@ public class Task {
 	}
 
 
-	public String getTaskStatus() {
+	public TaskStatus getTaskStatus() {
 		return taskStatus;
 	}
 
 
-	public void setTaskStatus(String taskStatus) {
+	public void setTaskStatus(TaskStatus taskStatus) {
 		this.taskStatus = taskStatus;
 	}
 
@@ -108,10 +108,7 @@ public class Task {
 				return false;
 		} else if (!taskName.equals(other.taskName))
 			return false;
-		if (taskStatus == null) {
-			if (other.taskStatus != null)
-				return false;
-		} else if (!taskStatus.equals(other.taskStatus))
+		if (taskStatus != other.taskStatus)
 			return false;
 		if (userLogin == null) {
 			if (other.userLogin != null)

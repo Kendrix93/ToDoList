@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import data.holder.DataHolder;
 import data.model.Project;
 import data.model.Task;
+import data.model.TaskStatus;
 import panelControlls.MenuPanel;
 
 public class TaskManage {
@@ -56,7 +57,7 @@ public class TaskManage {
 	}
 
 	public static void changeTaskStatus(String taskName, String projectName, String userLogin, String userType,
-			String taskStatus) {
+			TaskStatus taskStatus) {
 
 		for (Task t : tasks) {
 			if (t.getTaskName().equals(taskName) && t.getProjectName().equals(projectName)) {

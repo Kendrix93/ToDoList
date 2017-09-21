@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import data.holder.DataHolder;
 import data.model.Project;
 import data.model.Task;
+import data.model.TaskStatus;
 import data.model.User;
 import data.model.UserType;
 
@@ -90,8 +91,16 @@ public class OpenFromCSV {
 	public static ArrayList<Task> toObjectTask(ArrayList<String> read){
 		for (String line: read) {
 			String[] l = line.split(";");
-			Task tasks = new Task(l[0], l[1], l[2], l[3],l[4]);
+			if (l[3].equals("TODO")) {
+			Task tasks = new Task(l[0], l[1], l[2], TaskStatus.TODO,l[4]);
 			task.add(tasks);
+			}else if (l[3].equals("DOING")) {
+				Task tasks = new Task(l[0], l[1], l[2], TaskStatus.DOING,l[4]);
+				task.add(tasks);
+			}else if (l[3].equals("DONE")) {
+				Task tasks = new Task(l[0], l[1], l[2], TaskStatus.DONE,l[4]);
+				task.add(tasks);
+			}
 		}
 		return task;
 	}

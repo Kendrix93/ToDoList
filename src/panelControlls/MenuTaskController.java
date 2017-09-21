@@ -3,6 +3,7 @@ package panelControlls;
 import java.util.Scanner;
 
 import data.model.Task;
+import data.model.TaskStatus;
 import util.TaskManage;
 
 public class MenuTaskController {
@@ -12,7 +13,7 @@ public class MenuTaskController {
 	public static void addTask(String userType, String userLogin) {
 		
 		String taskName, taskDescription, projectName;
-		String taskStatus = "TODO";
+		TaskStatus taskStatus = TaskStatus.TODO;
 		
 		System.out.println("Project name");
 		projectName = in.nextLine();
@@ -49,15 +50,32 @@ public class MenuTaskController {
 	
 	public static void changeTaskStatus(String userType, String userLogin) {
 		
-		String taskStatus, taskName, projectName;
+		String taskName, projectName;
+		TaskStatus taskStatus = TaskStatus.TODO; 
+		int a;
 		
-		System.out.println("Task status");
-		taskStatus = in.next();
-		System.out.println("Task name");
-		taskName = in.nextLine();
+		
 		System.out.println("Project Name");
 		projectName = in.nextLine();
+		System.out.println("Task name");
+		taskName = in.nextLine();
+		System.out.println("Task status");
+		System.out.println("1. TODO");
+		System.out.println("2. DOING");
+		System.out.println("3. DONE");
 		
+		a = in.nextInt();
+		if (a == 1) {
+			taskStatus = TaskStatus.TODO;
+		} else if ( a == 2) {
+			taskStatus = TaskStatus.DOING;
+		}else if (a == 3) {
+			taskStatus = TaskStatus.DONE;
+			
+		}
+		
+
+
 		TaskManage.changeTaskStatus(taskName, projectName, userLogin, userType, taskStatus);
 	}
 	

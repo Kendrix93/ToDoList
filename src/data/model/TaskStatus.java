@@ -1,5 +1,5 @@
 package data.model;
 
-public enum Status {
+public enum TaskStatus {
 	TODO, DOING, DONE;
 }
