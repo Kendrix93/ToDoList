@@ -87,13 +87,15 @@ public class MenuPanel{
 		System.out.println("3. Change user password");
 		System.out.println("4. Add project");
 		System.out.println("5. Add task");
-		System.out.println("6. Show all taks to project");
-		System.out.println("7. Change task status");
-		System.out.println("8. Edit task");
-		System.out.println("9. Delete task");
-		System.out.println("10. Delete project");
-		System.out.println("11. Show users");
-		System.out.println("12. Show all projects");
+		System.out.println("6. Show all my projects");
+		System.out.println("7. Show all taks to project");
+		System.out.println("8. Show all my Projects and tasks");
+		System.out.println("9. Change task status");
+		System.out.println("10. Edit task");
+		System.out.println("11. Delete task");
+		System.out.println("12. Delete project");
+		System.out.println("13. Show users");
+		System.out.println("14. Show all projects");
 		System.out.println("0. Logout");
 		
 		
@@ -118,24 +120,30 @@ public class MenuPanel{
 			MenuTaskController.addTask(userType, userLogin);
 			adminPanel(userLogin);
 		case 6:
-			MenuTaskController.showAllTasks();
+			MenuController.showAllUserProject(userLogin);
 			adminPanel(userLogin);
 		case 7:
-			MenuTaskController.changeTaskStatus(userType, userLogin);
+			MenuTaskController.showAllUserProjectTask(userLogin);
 			adminPanel(userLogin);
 		case 8:
-			MenuTaskController.editTask(userType, userLogin);
+			MenuController.showAllUserProjectAndTask(userLogin);
 			adminPanel(userLogin);
 		case 9:
-			MenuTaskController.deleteTask(userType, userLogin);
+			MenuTaskController.changeTaskStatus(userType, userLogin);
 			adminPanel(userLogin);
 		case 10:
-			MenuController.deleteProject(userType, userLogin);
+			MenuTaskController.editTask(userType, userLogin);
 			adminPanel(userLogin);
 		case 11:
-			MenuController.showUsers();
+			MenuTaskController.deleteTask(userType, userLogin);
 			adminPanel(userLogin);
 		case 12:
+			MenuController.deleteProject(userType, userLogin);
+			adminPanel(userLogin);
+		case 13:
+			MenuController.showUsers();
+			adminPanel(userLogin);
+		case 14:
 			MenuController.showAllProjects();
 			adminPanel(userLogin);
 		case 0:
