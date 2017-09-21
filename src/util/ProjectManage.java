@@ -22,7 +22,7 @@ public class ProjectManage {
 				if (userType == "ADMIN") {
 					MenuPanel.adminPanel(userLogin);
 				}else {
-					MenuPanel.userPanel();
+					MenuPanel.userPanel(userLogin);
 				}
 				}			
 		}
@@ -46,7 +46,7 @@ public class ProjectManage {
 		if(userType == "ADMIN") {
 			MenuPanel.adminPanel(userLogin);
 		}else {
-			MenuPanel.userPanel();
+			MenuPanel.userPanel(userLogin);
 		}
 	}
 	

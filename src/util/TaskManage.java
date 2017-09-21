@@ -22,7 +22,7 @@ public class TaskManage {
 						if (userType == "ADMIN") {
 							MenuPanel.adminPanel(userLogin);
 						}else {
-							MenuPanel.userPanel();
+							MenuPanel.userPanel(userLogin);
 						}
 					}
 				}
@@ -48,7 +48,7 @@ public class TaskManage {
 					if (userType == "ADMIN") {
 						MenuPanel.adminPanel(userLogin);
 					}else {
-						MenuPanel.userPanel();
+						MenuPanel.userPanel(userLogin);
 					}
 			}
 		}
@@ -65,7 +65,7 @@ public class TaskManage {
 					if (userType == "ADMIN") {
 						MenuPanel.adminPanel(userLogin);
 					}else {
-						MenuPanel.userPanel();
+						MenuPanel.userPanel(userLogin);
 					}
 			}
 		}

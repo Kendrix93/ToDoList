@@ -2,6 +2,7 @@ package panelControlls;
 
 import java.util.Scanner;
 
+import util.ProjectManage;
 import util.SaveToCSV;
 
 public class MenuPanel{
@@ -9,7 +10,9 @@ public class MenuPanel{
 	private static Scanner in = new Scanner(System.in);
 	
 	
-	public static void userPanel() {
+	public static void userPanel(String userLogin) {
+		
+		String userType = "USER";
 		
 		SaveToCSV.saveToFileUser();
 		SaveToCSV.saveToFileProject();
@@ -30,8 +33,30 @@ public class MenuPanel{
 		switch(a) {
 		
 		case 1:
-			
+			MenuController.addProject(userType, userLogin);
+			userPanel(userLogin);
 		case 2:
+			MenuTaskController.addTask(userType, userLogin);
+			userPanel(userLogin);
+		case 3:
+			MenuTaskController.showAllTasks();
+			userPanel(userLogin);
+		case 4:
+			MenuTaskController.changeTaskStatus(userType, userLogin);
+			userPanel(userLogin);
+		case 5:
+		//	MenuTaskController;
+			userPanel(userLogin);
+			
+		case 6:
+			MenuTaskController.deleteTask(userType, userLogin);
+			userPanel(userLogin);
+		case 7:
+			MenuController.deleteProject(userType, userLogin);
+			userPanel(userLogin);
+		case 0:
+			LoginPanel.Panel();
+			
 			
 			
 			

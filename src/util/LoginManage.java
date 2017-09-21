@@ -18,7 +18,7 @@ public class LoginManage {
 				if (u.getUserType().equals("ADMIN")) {
 					MenuPanel.adminPanel(u.getLogin());
 				}else {
-					MenuPanel.userPanel();
+					MenuPanel.userPanel(u.getLogin());
 				}
 			}
 		}
