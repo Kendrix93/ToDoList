@@ -8,12 +8,12 @@ import data.model.Task;
 import panelControlls.MenuPanel;
 
 public class TaskManage {
-	
+
 	private static ArrayList<Task> tasks = DataHolder.getTask();
 	private static ArrayList<Project> projects = DataHolder.getProject();
-	
+
 	public static void addTask(Task task, String userLogin, String userType) {
-		
+
 		for (Project p : projects) {
 			if (p.getProjectName().equals(task.getProjectName())) {
 				for (Task t : tasks) {
@@ -21,7 +21,7 @@ public class TaskManage {
 						System.out.println("Task is already existance");
 						if (userType == "ADMIN") {
 							MenuPanel.adminPanel(userLogin);
-						}else {
+						} else {
 							MenuPanel.userPanel(userLogin);
 						}
 					}
@@ -29,49 +29,63 @@ public class TaskManage {
 			}
 		}
 		tasks.add(task);
-		
+
 	}
-	
+
 	public static void showAllTasks() {
-		
+
 		for (Task t : tasks)
 			System.out.println(t);
-			
+
 	}
-	
+
 	public static void deleteTask(String taskName, String projectName, String userLogin, String userType) {
-	
-		
+
 		for (Task t : tasks) {
 			if (t.getTaskName().equals(taskName) && t.getProjectName().equals(projectName)) {
-					tasks.remove(t);
-					if (userType == "ADMIN") {
-						MenuPanel.adminPanel(userLogin);
-					}else {
-						MenuPanel.userPanel(userLogin);
-					}
+				tasks.remove(t);
+				if (userType == "ADMIN") {
+					MenuPanel.adminPanel(userLogin);
+				} else {
+					MenuPanel.userPanel(userLogin);
+				}
 			}
 		}
 		System.out.println("Wrong task or project");
-		
+
 	}
-	
-	public static void changeTaskStatus(String taskName, String projectName, 
-			String userLogin, String userType, String taskStatus) {
-		
+
+	public static void changeTaskStatus(String taskName, String projectName, String userLogin, String userType,
+			String taskStatus) {
+
 		for (Task t : tasks) {
 			if (t.getTaskName().equals(taskName) && t.getProjectName().equals(projectName)) {
-					t.setTaskStatus(taskStatus);
-					if (userType == "ADMIN") {
-						MenuPanel.adminPanel(userLogin);
-					}else {
-						MenuPanel.userPanel(userLogin);
-					}
+				t.setTaskStatus(taskStatus);
+				if (userType == "ADMIN") {
+					MenuPanel.adminPanel(userLogin);
+				} else {
+					MenuPanel.userPanel(userLogin);
+				}
 			}
 		}
 		System.out.println("Wrong task or project");
-		
+
 	}
-	
+
+	public static void editTask(String taskName, String projectName, String userLogin, String userType,
+			String taskDescription) {
+
+		for (Task t : tasks) {
+			if (t.getProjectName().equals(projectName) && t.getTaskName().equals(taskName)) {
+				t.setTaskDescription(taskDescription);
+				if (userType == "ADMIN") {
+					MenuPanel.adminPanel(userLogin);
+				} else {
+					MenuPanel.userPanel(userLogin);
+				}
+			}
+		}
+		System.out.println("Wrong task or project");
+	}
 
 }

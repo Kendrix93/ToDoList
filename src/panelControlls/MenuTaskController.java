@@ -49,7 +49,7 @@ public class MenuTaskController {
 	
 	public static void changeTaskStatus(String userType, String userLogin) {
 		
-		String taskStatus, taskName, projectName;;
+		String taskStatus, taskName, projectName;
 		
 		System.out.println("Task status");
 		taskStatus = in.next();
@@ -59,6 +59,22 @@ public class MenuTaskController {
 		projectName = in.nextLine();
 		
 		TaskManage.changeTaskStatus(taskName, projectName, userLogin, userType, taskStatus);
+	}
+	
+	public static void editTask(String userType, String userLogin) {
+		
+		String taskDescription, taskName, projectName;
+		
+		System.out.println("Project Name");
+		projectName = in.nextLine();
+		System.out.println("Task name");
+		taskName = in.nextLine();
+		System.out.println("Task status");
+		taskDescription = in.next();
+		
+		TaskManage.editTask(taskName, projectName, userLogin, userType, taskDescription);
+		
+		
 	}
 	
 

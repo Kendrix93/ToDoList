@@ -2,7 +2,6 @@ package panelControlls;
 
 import java.util.Scanner;
 
-import util.ProjectManage;
 import util.SaveToCSV;
 
 public class MenuPanel{
@@ -45,7 +44,7 @@ public class MenuPanel{
 			MenuTaskController.changeTaskStatus(userType, userLogin);
 			userPanel(userLogin);
 		case 5:
-		//	MenuTaskController;
+			MenuTaskController.editTask(userType, userLogin);
 			userPanel(userLogin);
 			
 		case 6:
@@ -55,7 +54,7 @@ public class MenuPanel{
 			MenuController.deleteProject(userType, userLogin);
 			userPanel(userLogin);
 		case 0:
-			LoginPanel.Panel();
+			System.exit(0);
 			
 			
 			
@@ -114,8 +113,15 @@ public class MenuPanel{
 		case 6:
 			MenuTaskController.showAllTasks();
 			adminPanel(userLogin);
-			
-			
+		case 7:
+			MenuTaskController.changeTaskStatus(userType, userLogin);
+			adminPanel(userLogin);
+		case 8:
+			MenuTaskController.editTask(userType, userLogin);
+			adminPanel(userLogin);
+		case 9:
+			MenuTaskController.deleteTask(userType, userLogin);
+			adminPanel(userLogin);
 		case 10:
 			MenuController.deleteProject(userType, userLogin);
 			adminPanel(userLogin);
@@ -125,6 +131,8 @@ public class MenuPanel{
 		case 12:
 			MenuController.showAllProjects();
 			adminPanel(userLogin);
+		case 0:
+			System.exit(0);
 		}
 	}
 
