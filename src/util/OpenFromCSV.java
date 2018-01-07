@@ -38,7 +38,7 @@ public class OpenFromCSV {
 		return user;
 	}
 	
-	public static ArrayList<User> toObjectUser(ArrayList<String> read) {
+	private static ArrayList<User> toObjectUser(ArrayList<String> read) {
 		for (String line : read) {
 			String[] l = line.split(";");
 			if (l[4].equals("ADMIN")) {
@@ -65,7 +65,7 @@ public class OpenFromCSV {
 		return project;
 	}
 	
-	public static ArrayList<Project> toObjectProject(ArrayList<String> read){
+	private static ArrayList<Project> toObjectProject(ArrayList<String> read){
 		for (String line: read) {
 			String[] l = line.split(";");
 			Project projects = new Project(l[0], l[1], l[2]);
@@ -88,7 +88,7 @@ public class OpenFromCSV {
 		return task;
 	}
 	
-	public static ArrayList<Task> toObjectTask(ArrayList<String> read){
+	private static ArrayList<Task> toObjectTask(ArrayList<String> read){
 		for (String line: read) {
 			String[] l = line.split(";");
 			if (l[3].equals("TODO")) {
